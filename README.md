@@ -142,7 +142,8 @@ Pemilihan role dengan visual permission
 Fitur deteksi lokasi untuk peminjaman buku
 
 4. Response Terminal
-<img width="1920" height="1080" alt="Screenshot (95)" src="https://github.com/user-attachments/assets/06b0fd9c-6f22-4307-b15c-a005c78e43d7" />
+<img width="1869" height="938" alt="image" src="https://github.com/user-attachments/assets/cfa1a726-f1a5-4c99-8e4c-cc9f9974c2ae" />
+
 Terminal dengan syntax highlighting untuk response
 
 5. Database Structure di phpMyAdmin
