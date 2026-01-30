@@ -1,0 +1,11 @@
+# Minimal .gitignore untuk Node.js
+@'
+node_modules/
+.env
+.DS_Store
+npm-debug.log*
+'@ | Out-File -FilePath ".gitignore" -Encoding UTF8
+
+# Tambah di .gitignore
+/public/js/app.js
+/public/css/style.css

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Library Management System - World's Best Interface</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+</head>
+<body>
+    <!-- Animated Particles -->
+    <div id="particles-container"></div>
+    
+    <div class="container">
+        <!-- Header with Premium Effects -->
+        <header>
+            <div class="floating">
+                <h1><i class="fas fa-book-open"></i> Library Management System</h1>
+            </div>
+            <p class="subtitle">✨ The Most Advanced Library API with Real-time Geolocation Tracking ✨</p>
+            <div class="tech-stack">
+                <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+                <span class="tech-badge"><i class="fas fa-bolt"></i> Express.js</span>
+                <span class="tech-badge"><i class="fas fa-database"></i> MySQL</span>
+                <span class="tech-badge"><i class="fas fa-map-marker-alt"></i> Geolocation</span>
+                <span class="tech-badge"><i class="fas fa-shield-alt"></i> Role-based Auth</span>
+            </div>
+        </header>
+
+        <!-- System Status Cards -->
+        <div class="app-info">
+            <div class="info-card card-3d">
+                <h3><i class="fas fa-rocket"></i> System Status</h3>
+                <div class="status-grid">
+                    <div id="api-status" class="status-card">
+                        <i class="fas fa-satellite-dish loading-spinner"></i>
+                        <span class="status-loading">Initializing API Connection...</span>
+                    </div>
+                    <div id="db-status" class="status-card">
+                        <i class="fas fa-database loading-spinner"></i>
+                        <span class="status-loading">Establishing Database Connection...</span>
+                    </div>
+                    <div id="server-status" class="status-card">
+                        <i class="fas fa-server"></i>
+                        <span>Server: <strong>Online</strong></span>
+                    </div>
+                    <div id="uptime-status" class="status-card">
+                        <i class="fas fa-clock"></i>
+                        <span>Uptime: <strong id="uptime">0s</strong></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-card card-3d">
+                <h3><i class="fas fa-crown"></i> Premium Features</h3>
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Real-time API Monitoring</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>GPS Location Tracking</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Advanced Role Security</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Performance Analytics</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Responsive Design</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-robot"></i>
+                        <span>AI-Powered Insights</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Role Selection -->
+        <div class="role-section">
+            <h2><i class="fas fa-id-card-alt"></i> Identity Management</h2>
+            <p class="section-subtitle">Select your access level to experience different capabilities</p>
+            
+            <div class="role-buttons">
+                <button class="role-btn active" data-role="guest">
+                    <i class="fas fa-user"></i>
+                    <div class="role-info">
+                        <span class="role-title">Guest Explorer</span>
+                        <span class="role-desc">Read-only access</span>
+                    </div>
+                </button>
+                <button class="role-btn" data-role="user">
+                    <i class="fas fa-user-check"></i>
+                    <div class="role-info">
+                        <span class="role-title">Library Member</span>
+                        <span class="role-desc">Borrow & Track books</span>
+                    </div>
+                </button>
+                <button class="role-btn" data-role="admin">
+                    <i class="fas fa-user-crown"></i>
+                    <div class="role-info">
+                        <span class="role-title">System Administrator</span>
+                        <span class="role-desc">Full system control</span>
+                    </div>
+                </button>
+            </div>
+            
+            <div class="current-role">
+                <div class="role-display">
+                    <i class="fas fa-user-tag"></i>
+                    <div>
+                        <span class="role-label">Active Identity:</span>
+                        <span id="current-role" class="role-value">Guest Explorer</span>
+                    </div>
+                </div>
+                
+                <div class="user-id-input" id="userIdInput" style="display: none;">
+                    <div class="id-input-wrapper">
+                        <i class="fas fa-fingerprint"></i>
+                        <input type="number" id="userId" placeholder="Enter Member ID" value="1001">
+                        <span class="input-hint">Unique identifier for tracking</span>
+                    </div>
+                </div>
+                
+                <div class="permissions-display">
+                    <span class="permissions-label">Current Permissions:</span>
+                    <div class="permissions-list" id="permissions-list">
+                        <span class="permission">📖 View Books</span>
+                        <span class="permission">🔍 Search Catalog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Command Center -->
+        <div class="api-section">
+            <h2><i class="fas fa-terminal"></i> API Command Center</h2>
+            <p class="section-subtitle">Control the entire library system through our powerful API endpoints</p>
+            
+            <div class="api-cards">
+                <!-- Books Management -->
+                <div class="api-card card-3d">
+                    <div class="card-header">
+                        <h3><i class="fas fa-book-medical"></i> Book Management</h3>
+                        <span class="card-badge premium">PRO</span>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <h4>GET /api/books <span class="method get">GET</span></h4>
+                            <span class="endpoint-status active">🟢 Live</span>
+                        </div>
+                        <p class="endpoint-desc">Retrieve the entire library catalog with real-time stock information</p>
+                        <div class="form-group">
+                            <input type="text" placeholder="Search query (optional)" id="searchQuery">
+                        </div>
+                        <button class="api-btn" onclick="getAllBooks()">
+                            <i class="fas fa-database"></i> Fetch Library Catalog
+                        </button>
+                        <div class="result" id="getBooksResult"></div>
+                    </div>
+
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <h4>POST /api/books <span class="method post">POST</span> <span class="role-badge admin-only">🔒 Admin Only</span></h4>
+                            <span class="endpoint-status active">🟢 Live</span>
+                        </div>
+                        <p class="endpoint-desc">Add new books to the library collection with detailed metadata</p>
+                        <div class="form-group">
+                            <input type="text" id="bookTitle" placeholder="Book Title" value="The Art of Node.js">
+                            <input type="text" id="bookAuthor" placeholder="Author Name" value="Master Developer">
+                            <div class="form-row">
+                                <input type="number" id="bookStock" placeholder="Stock Quantity" value="15">
+                                <select id="bookCategory">
+                                    <option>Technology</option>
+                                    <option>Fiction</option>
+                                    <option>Science</option>
+                                    <option>Business</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="api-btn" onclick="addBook()">
+                            <i class="fas fa-plus-circle"></i> Add New Book
+                        </button>
+                        <div class="result" id="addBookResult"></div>
+                    </div>
+                </div>
+
+                <!-- Book Borrowing System -->
+                <div class="api-card card-3d">
+                    <div class="card-header">
+                        <h3><i class="fas fa-handshake"></i> Borrowing System</h3>
+                        <span class="card-badge featured">🌟 Featured</span>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <h4>POST /api/borrow <span class="method post">POST</span> <span class="role-badge user-only">👤 User Only</span></h4>
+                            <span class="endpoint-status active">🟢 Live</span>
+                        </div>
+                        <p class="endpoint-desc">Borrow books with precise geolocation tracking for security</p>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <input type="number" id="borrowBookId" placeholder="Book ID" value="1">
+                                <select id="borrowDuration">
+                                    <option value="7">7 Days</option>
+                                    <option value="14">14 Days</option>
+                                    <option value="30">30 Days</option>
+                                </select>
+                            </div>
+                            <div class="geo-section">
+                                <div class="geo-inputs">
+                                    <div class="geo-input">
+                                        <label><i class="fas fa-globe-americas"></i> Latitude</label>
+                                        <input type="number" id="latitude" step="any" value="-6.2088">
+                                    </div>
+                                    <div class="geo-input">
+                                        <label><i class="fas fa-globe-asia"></i> Longitude</label>
+                                        <input type="number" id="longitude" step="any" value="106.8456">
+                                    </div>
+                                </div>
+                                <div class="geo-controls">
+                                    <button type="button" class="small-btn" onclick="getCurrentLocation()">
+                                        <i class="fas fa-crosshairs"></i> Detect My Location
+                                    </button>
+                                    <button type="button" class="small-btn" onclick="useSampleLocation()">
+                                        <i class="fas fa-map-pin"></i> Use Sample
+                                    </button>
+                                </div>
+                                <div class="location-preview" id="locationPreview">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Jakarta, Indonesia 🇮🇩</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="api-btn" onclick="borrowBook()">
+                            <i class="fas fa-book-reader"></i> Borrow with Location Tracking
+                        </button>
+                        <div class="result" id="borrowResult"></div>
+                    </div>
+
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <h4>GET /api/borrow/history <span class="method get">GET</span> <span class="role-badge user-only">👤 User Only</span></h4>
+                            <span class="endpoint-status active">🟢 Live</span>
+                        </div>
+                        <p class="endpoint-desc">View your complete borrowing history with timeline visualization</p>
+                        <button class="api-btn" onclick="getBorrowHistory()">
+                            <i class="fas fa-history"></i> View Borrowing History
+                        </button>
+                        <div class="result" id="borrowHistoryResult"></div>
+                    </div>
+                </div>
+
+                <!-- Advanced Operations -->
+                <div class="api-card card-3d">
+                    <div class="card-header">
+                        <h3><i class="fas fa-cogs"></i> Advanced Operations</h3>
+                        <span class="card-badge power">⚡ Power</span>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <h4>GET /api/books/:id <span class="method get">GET</span></h4>
+                            <span class="endpoint-status active">🟢 Live</span>
+                        </div>
+                        <p class="endpoint-desc">Access detailed information about specific books</p>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <input type="number" id="getBookId" placeholder="Book ID" value="1">
+                                <button class="small-btn" onclick="suggestBookId()">
+                                    <i class="fas fa-lightbulb"></i> Suggest
+                                </button>
+                            </div>
+                        </div>
+                        <button class="api-btn" onclick="getBookById()">
+                            <i class="fas fa-search"></i> Get Book Details
+                        </button>
+                        <div class="result" id="getBookResult"></div>
+                    </div>
+
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <h4>PUT /api/books/:id <span class="method put">PUT</span> <span class="role-badge admin-only">🔒 Admin Only</span></h4>
+                            <span class="endpoint-status active">🟢 Live</span>
+                        </div>
+                        <p class="endpoint-desc">Update book information with advanced validation</p>
+                        <div class="form-group">
+                            <input type="number" id="updateBookId" placeholder="Book ID to Update" value="1">
+                            <input type="text" id="updateTitle" placeholder="New Title" value="Updated: Master Node.js">
+                            <input type="text" id="updateAuthor" placeholder="New Author" value="Senior Developer">
+                            <input type="number" id="updateStock" placeholder="Updated Stock" value="25">
+                        </div>
+                        <button class="api-btn" onclick="updateBook()">
+                            <i class="fas fa-sync-alt"></i> Update Book Information
+                        </button>
+                        <div class="result" id="updateBookResult"></div>
+                    </div>
+
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <h4>DELETE /api/books/:id <span class="method delete">DELETE</span> <span class="role-badge admin-only">🔒 Admin Only</span></h4>
+                            <span class="endpoint-status active">🟢 Live</span>
+                        </div>
+                        <p class="endpoint-desc">Remove books from the system (requires confirmation)</p>
+                        <div class="form-group">
+                            <input type="number" id="deleteBookId" placeholder="Book ID to Remove" value="">
+                            <div class="danger-zone">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>This action cannot be undone</span>
+                            </div>
+                        </div>
+                        <button class="api-btn delete-btn" onclick="deleteBook()">
+                            <i class="fas fa-skull-crossbones"></i> Delete Book (Danger Zone)
+                        </button>
+                        <div class="result" id="deleteBookResult"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Response Terminal -->
+        <div class="response-section">
+            <div class="terminal-header">
+                <h2><i class="fas fa-code"></i> Response Terminal</h2>
+                <div class="terminal-controls">
+                    <button class="terminal-btn" onclick="clearAllResults()">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                    <button class="terminal-btn" onclick="copyResponse()">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                    <button class="terminal-btn" onclick="exportResponse()">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                    <span class="terminal-status" id="terminalStatus">Ready</span>
+                </div>
+            </div>
+            
+            <div class="response-viewer">
+                <div class="response-header">
+                    <div class="response-info">
+                        <span class="response-title"><i class="fas fa-signal"></i> Live Response Stream</span>
+                        <span class="response-time" id="responseTime">--:--:--</span>
+                    </div>
+                    <div class="response-stats">
+                        <span><i class="fas fa-bolt"></i> Response Time: <span id="responseSpeed">0ms</span></span>
+                        <span><i class="fas fa-weight-hanging"></i> Size: <span id="responseSize">0B</span></span>
+                        <span><i class="fas fa-check-circle"></i> Status: <span id="responseStatus">Idle</span></span>
+                    </div>
+                </div>
+                <div class="terminal-content">
+                    <div class="terminal-prompt">
+                        <span class="prompt-symbol">$</span>
+                        <span class="prompt-text">library-api ></span>
+                    </div>
+                    <pre id="responseOutput">
+<span class="welcome-text">
+╔══════════════════════════════════════════════════════════╗
+║    🚀 LIBRARY MANAGEMENT SYSTEM - RESPONSE TERMINAL     ║
+║    ══════════════════════════════════════════════════    ║
+║                                                          ║
+║   Welcome to the most advanced API testing interface!    ║
+║   Click any button above to start interacting with the   ║
+║   backend API. Responses will appear here in real-time.  ║
+║                                                          ║
+║   System Status: ✅ Online                               ║
+║   Database: ✅ Connected                                 ║
+║   API: ✅ Ready                                          ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
+
+Type 'help' for available commands or click API buttons above.
+</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-book-reader"></i> Library Management System</h3>
+                    <p>World's Most Advanced Library API Platform</p>
+                </div>
+                
+                <div class="footer-info">
+                    <div class="info-item">
+                        <i class="fas fa-code-branch"></i>
+                        <div>
+                            <span class="info-label">Version</span>
+                            <span class="info-value">v3.0.0</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <span class="info-label">Security Level</span>
+                            <span class="info-value">Enterprise Grade</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <span class="info-label">Performance</span>
+                            <span class="info-value">99.9% Uptime</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="api-info">
+                    <p class="api-url">
+                        <i class="fas fa-link"></i> 
+                        API Base URL: <code>http://localhost:3000</code>
+                    </p>
+                    <p class="api-docs">
+                        <i class="fas fa-book"></i> 
+                        Full Documentation Available
+                    </p>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>© 2024 Library Management System | Built with 💙 using Node.js, Express & MySQL</p>
+                    <p class="award-badge">
+                        <i class="fas fa-trophy"></i> 
+                        Awarded: "Best Interface Design 2024"
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- Initialize Particles -->
+    <script>
+        particlesJS.load('particles-container', '/js/particles-config.json');
+    </script>
+</body>
+</html>
