@@ -130,40 +130,34 @@ GET http://localhost:3000/api/books
 📸 Screenshot Hasil Aplikasi
 1. Tampilan Web Interface Dashboard
 ![alt text](image.png)
-
 Dashboard utama dengan monitoring sistem real-time
 
-2. API Testing Panel
-https://screenshots/api-testing.png
-Panel lengkap untuk testing semua endpoint API
 
-3. Role Selection Interface
-https://screenshots/role-selection.png
+2. Role Selection Interface
+<img width="1919" height="660" alt="Screenshot 2026-01-30 213516" src="https://github.com/user-attachments/assets/99bdf6f7-35b0-4153-8532-2f0c8fefab39" />
 Pemilihan role dengan visual permission
 
-4. Geolocation Feature
-https://screenshots/geolocation.png
+3. Geolocation Feature
+<img width="879" height="1079" alt="image" src="https://github.com/user-attachments/assets/e84ae6e3-9195-4b76-8e6e-162542706d06" />
 Fitur deteksi lokasi untuk peminjaman buku
 
-5. Response Terminal
-https://screenshots/response-terminal.png
+4. Response Terminal
+<img width="1920" height="1080" alt="Screenshot (95)" src="https://github.com/user-attachments/assets/06b0fd9c-6f22-4307-b15c-a005c78e43d7" />
 Terminal dengan syntax highlighting untuk response
 
-6. Database Structure di phpMyAdmin
-https://screenshots/database-structure.png
+5. Database Structure di phpMyAdmin
+<img width="1487" height="682" alt="image" src="https://github.com/user-attachments/assets/3a40f067-2cc3-4942-b90d-e4848fcb2f42" />
+<img width="1484" height="727" alt="image" src="https://github.com/user-attachments/assets/b1849985-9636-4c92-ab53-d968d11ebbee" />
 Struktur tabel books dan borrow_logs
 
-7. Contoh Success Response
-https://screenshots/success-response.png
+6. Contoh Success Response
+<img width="1478" height="726" alt="image" src="https://github.com/user-attachments/assets/a2a9ccd1-f0fc-4619-b7bb-b2c6a685bae0" />
 Response berhasil dari API endpoint
 
-8. Error Handling Example
-https://screenshots/error-handling.png
+7. Error Handling Example
+<img width="1496" height="718" alt="image" src="https://github.com/user-attachments/assets/3c599c1b-0538-4e6f-8745-0a57f6c69bb6" />
 Contoh error handling dengan pesan jelas
 
-9. Mobile Responsive View
-https://screenshots/mobile-view.png
-Tampilan optimal di perangkat mobile
 
 🗄️ Struktur Database
 Tabel 1: books
