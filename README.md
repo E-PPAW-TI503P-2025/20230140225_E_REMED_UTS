@@ -129,7 +129,12 @@ http
 GET http://localhost:3000/api/books
 📸 Screenshot Hasil Aplikasi
 1. Tampilan Web Interface Dashboard
-https://screenshots/dashboard.png
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
 Dashboard utama dengan monitoring sistem real-time
 
 2. API Testing Panel
